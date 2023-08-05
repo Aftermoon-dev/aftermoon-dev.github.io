@@ -18,15 +18,19 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 
+title: Aftermoon's Dev Blog
 email: ddol0225@gmail.com
+locale:  "ko-KR"
 description: Hello!
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: blog.aftermoon.dev
+author: Minjae Seon (Eric)
 url: https://blog.aftermoon.dev
+
 github_username: Aftermoon-dev
 
 # Build settings
+theme: plainwhite
 remote_theme: samarsault/plainwhite-jekyll
 plugins:
   - jekyll-feed
