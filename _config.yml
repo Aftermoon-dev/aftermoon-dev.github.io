@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: 
 email: ddol0225@gmail.com
 description: Hello!
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -32,15 +32,17 @@ plugins:
   - jekyll-feed
 
 plainwhite:
-  name: Minjae Seon
+  name: Minjae Seon (Eric)
+  portfolio_image: "assets/profile.jpg"
   tagline: Software Developer
-  date_format: "%Y %b %-d"
+  date_format: "%Y-%m-%d"
+  disqus_shortname: aftermoons-dev-blog
   social_links:
     github: Aftermoon-dev
-    linkedIn: ko/minjae-seon-2948a91a1 # format: locale/username
+    linkedIn: in/minjae-seon-2948a91a1 # format: locale/username
   sitemap: true
   dark_mode: true
-  search: true
+  search: false
   html_lang: "ko"
 
 # Exclude from processing.
