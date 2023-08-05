@@ -30,7 +30,7 @@ url: https://blog.aftermoon.dev
 github_username: Aftermoon-dev
 
 # Build settings
-theme: plainwhite
+# theme: plainwhite
 remote_theme: samarsault/plainwhite-jekyll
 plugins:
   - jekyll-feed
