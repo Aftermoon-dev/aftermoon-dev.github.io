@@ -22,7 +22,7 @@ title: Aftermoon's Dev Blog
 email: ddol0225@gmail.com
 locale:  "ko-KR"
 description: Hello!
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 domain: blog.aftermoon.dev
 author: Minjae Seon (Eric)
 url: https://blog.aftermoon.dev
