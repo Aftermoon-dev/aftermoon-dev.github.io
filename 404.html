@@ -1,25 +1,42 @@
 ---
-permalink: /404.html
-layout: default
+title: 404 Not Found
 ---
+<!DOCTYPE html>
+<html lang="en">
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<head>
+  {%- include head.html -%}
+  <style>
+    h2 {
+      font-feature-settings: "lnum";
+      background-color: #ddd;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center
+    }
 
-<div class="container">
-  <h1>404</h1>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 20px;
+      height: 80vh;
+    }
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+    p {
+      text-align: center;
+      line-height: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>404</h2>
+  <p>페이지를 찾을 수 없습니다.</p>
+</body>
+
+</html>

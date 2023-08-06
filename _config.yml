@@ -33,7 +33,7 @@ github_username: Aftermoon-dev
 # theme: plainwhite
 remote_theme: samarsault/plainwhite-jekyll
 plugins:
-  - jekyll-feed
+  - jekyll-seo-tag
 
 plainwhite:
   name: Minjae Seon (Eric)
@@ -43,7 +43,7 @@ plainwhite:
   disqus_shortname: aftermoons-dev-blog
   social_links:
     github: Aftermoon-dev
-    linkedIn: in/minjae-seon-2948a91a1 # format: locale/username
+    linkedIn: "in/minjae-seon-2948a91a1" # format: locale/username
   sitemap: true
   dark_mode: true
   search: false

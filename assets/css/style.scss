@@ -1,0 +1,23 @@
+---
+---
+
+@import "plain";
+.post-warning {
+  padding: 1rem;
+  font-size: large;
+  text-align: center;
+  border: 2px solid black;
+  margin-bottom: 1rem;
+}
+
+{% if site.plainwhite.search %}
+  @import "search";
+{% endif %}
+
+{%- if site.plainwhite.dark_mode -%}
+  @import "toggle";
+  @import "dark";
+{%- endif -%}
+
+
+
