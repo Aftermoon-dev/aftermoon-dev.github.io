@@ -8,7 +8,7 @@ GitHub Pages와 Jekyll를 사용한 블로그를 새로 세팅하면서, 테스�
 
 맥 기본으로 설치되어 있는 Ruby가 2.6.10p210 버전이었는데, 작년 4월 버전인 것 같다. ([https://www.ruby-lang.org/en/news/2022/04/12/ruby-2-6-10-released/](https://www.ruby-lang.org/en/news/2022/04/12/ruby-2-6-10-released/))
 
-![macOS Ruby Default Version](/assets/_posts/2023-08-06-macos-ruby-update/ruby_version.png)
+![macOS Ruby Default Version]({{site.baseurl | prepend: site.url}}assets/posts/2023-08-06-macos-ruby-update/ruby_version.png)
 
 그래서 어떻게 하면 Ruby를 업데이트 할 수 있는지 찾아본 결과를 아래에 정리해본다.
 
@@ -43,7 +43,7 @@ rbenv init
 
 해당 명령어를 입력하면, (아마도) 현재 사용중인 Shell에 맞는 환경변수 적용 방법을 출력해서 보여준다.
 
-![rbenv init](/assets/_posts/2023-08-06-macos-ruby-update/rbenv_init.png)
+![rbenv init]({{site.baseurl | prepend: site.url}}assets/posts/2023-08-06-macos-ruby-update/rbenv_init.png)
 
 이미지에서 보이는 것처럼 나는 zsh를 사용하고 있기 때문에 `.zshrc` 파일에다가 `eval "$(rbenv init - zsh)"`을 추가해야 한다.
 
@@ -86,7 +86,7 @@ rbenv에서 현재 설치에 사용할 수 있는 버전을 확인하려면 아�
 ```shell
 rbenv install -l
 ```
-![rbenv install -l](/assets/_posts/2023-08-06-macos-ruby-update/rbenv_install.png)
+![rbenv install -l]({{site.baseurl | prepend: site.url}}assets/posts/2023-08-06-macos-ruby-update/rbenv_install.png)
 
 install은 설치 옵션이고, -l은 아마 list를 줄여서 쓰는거니 해석하면 rbenv에서 설치할 수 있는 목록을 출력하라는 의미다.
 
