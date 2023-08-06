@@ -19,7 +19,9 @@ categories: Ubuntu
 
 ### 1. Swap 파일 존재 여부 확인
 - SSH에서 `free -m` 을 입력하여 기존에 설정되어 있는 Swap 확인
+
     ![free -m]({{site.baseurl | prepend: site.url}}/assets/posts/2022-06-18-ubuntu-setting-memory-swap/free.png)
+
     - 다음과 같이 Swap의 모든 항목이 0으로 나온다면 설정되지 않았으므로 계속 진행
     - 그렇지 않다면, Swap이 이미 적용된 상태 (굳이 따라하지 않으셔도 됩니다)
         - 만약 용량을 늘리고 싶다면, `/etc/fstab` 에서 Swap 파일 이름 (예: `/swapfile`)을 찾아서 Swap 적용 해제
@@ -30,7 +32,9 @@ categories: Ubuntu
 
 ### 2. 서버 용량 확인
 - SSH에서 `df -H` 를 입력하여 현재 용량 확인
-    ![free -m]({{site.baseurl | prepend: site.url}}/assets/posts/2022-06-18-ubuntu-setting-memory-swap/df.png)
+
+    ![df -H]({{site.baseurl | prepend: site.url}}/assets/posts/2022-06-18-ubuntu-setting-memory-swap/df.png)
+    
     - `/dev/root` 의 용량이 충분한지 확인
         - 전체 사이즈가 20GB 정도 있을 경우 설정하는 것을 추천하며, 20GB 이하일 경우 아래 글을 보고 용량 확장 필요
             - [EC2 EBS 확장 아마존 AWS 서버 용량 늘리기](https://vlog.tion.co.kr/ec2-ebs-%ED%99%95%EC%9E%A5-%EC%95%84%EB%A7%88%EC%A1%B4-aws-%EC%84%9C%EB%B2%84-%EC%9A%A9%EB%9F%89-%EB%8A%98%EB%A6%AC%EA%B8%B0/)
@@ -54,7 +58,9 @@ categories: Ubuntu
 
 ### 4. Swap 적용 여부 확인
 - `free -m` 으로 Swap 부분 확인
+    
     ![free -m after Swap]({{site.baseurl | prepend: site.url}}/assets/posts/2022-06-18-ubuntu-setting-memory-swap/free_afterswap.png)
+
     - 정상적으로 적용되었다면 다음과 같이 Swap 부분이 0이 아닌, 용량 (MB) 단위로 바뀜
 
 ### 5. 부팅 시마다 자동 적용시키기
