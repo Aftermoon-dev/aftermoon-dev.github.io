@@ -2,6 +2,75 @@
 ---
 
 @import "plain";
+
+$fontPretendard: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+
+body,
+.post,
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6,
+.navigation a,
+table th {
+  font-family: $fontPretendard;
+}
+
+main .about {
+  justify-content: flex-start;
+  padding-top: 45px;
+}
+#posts-label.tabs {
+  display: flex;
+  gap: 16px;
+  overflow: visible;
+}
+#posts-label .tab {
+  color: #999;
+  text-decoration: none;
+  font-size: 1.15em;
+}
+#posts-label .tab.active {
+  color: #555;
+}
+#posts-label .tab:hover {
+  color: #555;
+}
+.post-categories li a {
+  color: inherit;
+  background: none;
+  text-decoration: none;
+}
+.tag-index {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.tag-index .post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.tag-index .post-categories li {
+  float: none;
+  margin-right: 0;
+}
+.tag-section-title {
+  margin-top: 2rem;
+}
+
+.tag-clear{
+  margin-top: 10px;
+  padding: 5px 20px;
+  border-radius: 2px;
+  background-color: #e3e3e3;
+  color: #555;
+  text-decoration: none;
+}
+
 .post-warning {
   padding: 1rem;
   font-size: large;
@@ -17,6 +86,13 @@
 {%- if site.plainwhite.dark_mode -%}
   @import "toggle";
   @import "dark";
+
+  .dark #posts-label .tab {
+    color: #888;
+  }
+  .dark #posts-label .tab.active {
+    color: #f6f6f6;
+  }
 {%- endif -%}
 
 

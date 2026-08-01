@@ -18,29 +18,36 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Aftermoon's Dev Blog
+title: Minjae Seon (Eric)
 email: ddol0225@gmail.com
-locale:  "ko-KR"
+locale: "ko-KR"
 description: Hello!
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 domain: blog.aftermoon.dev
 author: Minjae Seon (Eric)
 url: https://blog.aftermoon.dev
 
 github_username: Aftermoon-dev
 
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
 # Build settings
 # theme: plainwhite
 remote_theme: samarsault/plainwhite-jekyll
 plugins:
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 plainwhite:
-  name: Minjae Seon (Eric)
-  portfolio_image: "assets/profile.jpg"
-  tagline: Software Developer
+  name: Minjae Seon (선민재)
+  portfolio_image: "assets/profile.png"
+  tagline: Software Engineer
   date_format: "%Y-%m-%d"
-  disqus_shortname: aftermoons-dev-blog
   social_links:
     github: Aftermoon-dev
     linkedIn: "in/minjae-seon-2948a91a1" # format: locale/username
@@ -48,6 +55,19 @@ plainwhite:
   dark_mode: true
   search: false
   html_lang: "ko"
+
+giscus:
+  repo: "Aftermoon-dev/aftermoon-dev.github.io"
+  repo_id: "R_kgDOKDvgJQ"
+  category: "General"
+  category_id: "DIC_kwDOKDvgJc4DCbeC"
+  mapping: "title"
+  strict: "0"
+  reactions_enabled: "1"
+  emit_metadata: "0"
+  input_position: "bottom"
+  theme: "preferred_color_scheme"
+  lang: "ko"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

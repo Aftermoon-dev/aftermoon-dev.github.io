@@ -48,10 +48,18 @@
 			background-color: #333;
 			color: #fff;
 		}
+		li a {
+			color: #fff;
+		}
 	}
 
 	a {
 		color: $dark_link_color;
+	}
+
+	.tag-clear {
+		background-color: #333;
+		color: #fff;
 	}
 	#title a {
 		color: #fff;

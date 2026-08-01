@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<ul class="posts">
+  <li class="posts-labelgroup" id="posts-labelgroup">
+    <h1 id="posts-label" class="tabs">
+      <a class="tab" href="{{ "/about/" | relative_url }}">about</a>
+      <a class="tab" href="{{ "/" | relative_url }}">posts</a>
+      <a class="tab active" href="{{ "/tags/" | relative_url }}">tags</a>
+    </h1>
+  </li>
+
+  {%- assign sorted_categories = site.categories | sort -%}
+  {%- if sorted_categories.size > 0 -%}
+  <li class="tag-index">
+    <ul class="post-categories">
+      {%- for category in sorted_categories -%}
+      <li><a href="#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
+      {%- endfor -%}
+    </ul>
+    <a class="tag-clear" href="{{ "/tags/" | relative_url }}">ALL</a>
+  </li>
+  {%- endif -%}
+
+  {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
+  {%- for category in sorted_categories -%}
+  <li class="tag-section" id="{{ category[0] | slugify }}">
+    <h2 class="tag-section-title">{{ category[0] }}</h2>
+    <ul class="posts">
+      {%- for post in category[1] -%}
+      <li>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          <h2 class="post-title">{{ post.title | escape }}</h2>
+        </a>
+        <div class="post-meta">
+          <div class="post-date">
+            <i class="icon-calendar"></i>
+            {{ post.date | date: date_format }}
+          </div>
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </li>
+  {%- endfor -%}
+</ul>
+
+<script src="{{ "/assets/js/tags.js" | relative_url }}" defer></script>
