@@ -19,7 +19,6 @@ layout: default
       <li><a href="#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
       {%- endfor -%}
     </ul>
-    <a class="tag-clear" href="{{ "/tags/" | relative_url }}">ALL</a>
   </li>
   {%- endif -%}
 

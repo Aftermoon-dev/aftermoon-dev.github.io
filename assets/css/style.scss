@@ -18,6 +18,10 @@ table th {
   font-family: $fontPretendard;
 }
 
+.post {
+  font-weight: 400;
+}
+
 main .about {
   justify-content: flex-start;
   padding-top: 90px;
@@ -60,6 +64,11 @@ main .about {
 }
 .tag-section-title {
   margin-top: 2rem;
+}
+.tag-section .posts {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
 }
 
 .tag-clear{
