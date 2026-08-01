@@ -4,7 +4,7 @@ date: 2022-06-28 09:00:00 +0900
 categories: Nginx
 ---
 
-> 이 글은 [UMC (University MakeUs Challenge)](https://makeus.in/umc) 활동 중 부원들과 개발 지식을 나누기 위해 작성했던 글을  일부 수정하여 블로그로 옮겨온 글입니다. 
+> 이 글은 [UMC (University MakeUs Challenge)](https://umc.makeus.in) 활동 중 부원들과 개발 지식을 나누기 위해 작성했던 글을  일부 수정하여 블로그로 옮겨온 글입니다. 
 
 Nginx에서 서브도메인 (www, prod, dev…)를 적용할 때, `/etc/nginx/sites-available/default` 파일에 모두 한 번에 작성해 연결하는 경우가 많았습니다.
 

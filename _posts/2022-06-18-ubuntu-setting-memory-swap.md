@@ -4,7 +4,7 @@ date: 2022-06-18 09:00:00 +0900
 categories: Ubuntu
 ---
 
-> 이 글은 [UMC (University MakeUs Challenge)](https://makeus.in/umc) 활동 중 부원들과 개발 지식을 나누기 위해 작성했던 글을  일부 수정하여 블로그로 옮겨온 글입니다. 
+> 이 글은 [UMC (University MakeUs Challenge)](https://umc.makeus.in) 활동 중 부원들과 개발 지식을 나누기 위해 작성했던 글을  일부 수정하여 블로그로 옮겨온 글입니다. 
 
 # 메모리 Swap 설정하기
 대부분 처음 서버 공부를 시작하실 때, 가격 부담이 없는 무료 요금제 (ex. AWS 프리티어 등)을 이용하고 계실 겁니다.
