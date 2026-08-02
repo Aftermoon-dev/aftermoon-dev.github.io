@@ -17,13 +17,13 @@ layout: default
         {%- endif -%}
     </div>
     {%- if page.toc -%}
-    <details class="post-toc" open>
+    <details class="post-toc" id="post-toc" open>
         <summary>목차</summary>
-        {{ content | toc_only }}
+        <ul class="toc-list"></ul>
     </details>
     {%- endif -%}
-    <div class="post">
-        {{ content | inject_anchors }}
+    <div class="post" id="post-content">
+        {{ content }}
     </div>
     <div class="post-warning">
         해당 블로그에서 제공하는 내용이 항상 맞는 해결책이 아닐 수 있으며, 
@@ -66,3 +66,6 @@ layout: default
         theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default"
     });
 </script>
+{%- if page.toc -%}
+<script src="{{ "/assets/js/toc.js" | relative_url }}" defer></script>
+{%- endif -%}
