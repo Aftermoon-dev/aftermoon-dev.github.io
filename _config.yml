@@ -26,7 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 domain: aftermoon.dev
 author: Minjae Seon (Eric)
 url: https://aftermoon.dev
-permalink: /:year/:month/:day/:title.html
+permalink: /:year-:month-:day-:title.html
 github_username: Aftermoon-dev
 
 defaults:
@@ -40,6 +40,7 @@ defaults:
 # theme: plainwhite
 remote_theme: samarsault/plainwhite-jekyll
 plugins:
+  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-remote-theme
 

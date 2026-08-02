@@ -5,6 +5,22 @@
 
 $fontPretendard: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 
+body {
+  overflow-x: hidden;
+}
+
+.highlight,
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.post table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 body,
 .post,
 .post h1,
@@ -20,6 +36,8 @@ table th {
 
 .post {
   font-weight: 400;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 main .about {
@@ -78,6 +96,11 @@ main .about {
   background-color: #e3e3e3;
   color: #555;
   text-decoration: none;
+}
+
+.post-container h1,
+.post h1 {
+  line-height: 1.4;
 }
 
 .post-warning {

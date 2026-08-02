@@ -2,14 +2,30 @@
 title: 404 Not Found
 ---
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="{{ site.plainwhite.html_lang }}">
 
 <head>
   {%- include head.html -%}
   <style>
-    h2 {
+    body {
+      background-color: #171717;
+      color: #f6f6f6;
+    }
+
+    .not-found {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 20px;
+    }
+
+    .not-found h2 {
       font-feature-settings: "lnum";
-      background-color: #ddd;
+      background-color: #333;
+      color: #f6f6f6;
       width: 140px;
       height: 140px;
       border-radius: 100%;
@@ -18,25 +34,34 @@ title: 404 Not Found
       align-items: center
     }
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-size: 20px;
-      height: 80vh;
-    }
-
     p {
       text-align: center;
       line-height: 2em;
     }
+
+    a.home-button {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 0.6em 1.4em;
+      border-radius: 6px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.home-button:hover {
+      background-color: #444;
+    }
   </style>
 </head>
 
-<body>
-  <h2>404</h2>
-  <p>페이지를 찾을 수 없습니다.</p>
+<body class="dark">
+  <div class="not-found">
+    <h2>404</h2>
+    <p>페이지를 찾을 수 없습니다.</p>
+    <a class="home-button" href="{{ '/' | relative_url }}">돌아가기</a>
+  </div>
 </body>
 
 </html>

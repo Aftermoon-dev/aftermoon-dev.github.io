@@ -48,6 +48,8 @@ GEM
       sass-embedded (~> 1.75)
     jekyll-seo-tag (2.9.0)
       jekyll (>= 3.8, < 5.0)
+    jekyll-sitemap (1.4.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.5.2)
@@ -94,6 +96,7 @@ DEPENDENCIES
   jekyll (~> 4.3.2)
   jekyll-feed (~> 0.12)
   jekyll-remote-theme
+  jekyll-sitemap
   logger
   plainwhite
   tzinfo (>= 1, < 3)
@@ -101,4 +104,4 @@ DEPENDENCIES
   wdm (~> 0.1.1)
 
 BUNDLED WITH
-  4.0.16
+  4.0.17
