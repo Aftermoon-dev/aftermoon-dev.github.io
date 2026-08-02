@@ -145,7 +145,7 @@ dependencies {
 먼저 `Aspect`로 동작할 Class를 하나 만들고, `@Aspect`와 `@Component`를 붙여 Spring Bean으로 등록한다. `@Component`를 빼먹으면 Spring Container가 이 Class를 인식하지 못해 Weaving 대상에서 제외되니 주의해야 한다.
 
 ```java
-package me.aftermoon.aspect;
+package dev.aftermoon.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -157,7 +157,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-    @Pointcut("execution(* me.aftermoon.service..*.*(..))")
+    @Pointcut("execution(* dev.aftermoon.service..*.*(..))")
     public void serviceLayer() {}
 
     @Around("serviceLayer()")
@@ -191,7 +191,7 @@ public class LoggingAspect {
 위의 `@Around` 예제와는 별개로, 같은 `Pointcut`에 대해 나머지 `Advice` 유형만 모아서 보여주면 아래와 같다. (실제 프로젝트라면 하나의 `Aspect` Class에 한 종류의 `Advice`만 두거나, 용도별로 나누는 게 일반적이다.)
 
 ```java
-package me.aftermoon.aspect;
+package dev.aftermoon.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -206,7 +206,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceLoggingAspect {
 
-    @Pointcut("execution(* me.aftermoon.service..*.*(..))")
+    @Pointcut("execution(* dev.aftermoon.service..*.*(..))")
     public void serviceLayer() {}
 
     @Before("serviceLayer()")
@@ -235,18 +235,18 @@ public class ServiceLoggingAspect {
 
 ## Pointcut 사용
 
-위에서 사용한 `execution(* me.aftermoon.service..*.*(..))`가 바로 `Pointcut` 표현식이다.
+위에서 사용한 `execution(* dev.aftermoon.service..*.*(..))`가 바로 `Pointcut` 표현식이다.
 
 - 첫 번째 `*` : 반환 타입 (모든 타입 허용)
-- `me.aftermoon.service..*` : `service` 패키지 및 하위 패키지의 모든 Class
+- `dev.aftermoon.service..*` : `service` 패키지 및 하위 패키지의 모든 Class
 - 두 번째 `*(..)` : 모든 Method 이름, 모든 파라미터 허용
 
-즉 `me.aftermoon.service` 이하 모든 Class의 모든 Method가 이 `Pointcut`에 매칭되어 `Advice`(`logExecutionTime`)가 적용된다.
+즉 `dev.aftermoon.service` 이하 모든 Class의 모든 Method가 이 `Pointcut`에 매칭되어 `Advice`(`logExecutionTime`)가 적용된다.
 
 실제로 아래와 같은 Service가 있다면,
 
 ```java
-package me.aftermoon.service;
+package dev.aftermoon.service;
 
 import org.springframework.stereotype.Service;
 
@@ -271,7 +271,7 @@ public @interface LogExecutionTime {
 ```
 
 ```java
-@Pointcut("@annotation(me.aftermoon.aspect.LogExecutionTime)")
+@Pointcut("@annotation(dev.aftermoon.aspect.LogExecutionTime)")
 public void logExecutionTimeAnnotation() {}
 ```
 
@@ -283,26 +283,26 @@ Spring AOP에서 사용 가능한 `Pointcut 지정자`는 아래와 같다.
 
 | 지정자 | 설명 | 예시 |
 | --- | --- | --- |
-| `execution` | Method 실행 Join Point를 매칭. 가장 많이 사용 | `execution(* me.aftermoon.service..*.*(..))` |
-| `within` | 특정 타입(패키지/클래스) 내 Join Point로 제한 | `within(me.aftermoon.service.*)` |
-| `this` | Proxy 객체가 특정 타입인 경우 매칭 | `this(me.aftermoon.service.MemberService)` |
-| `target` | Target Object가 특정 타입인 경우 매칭 | `target(me.aftermoon.service.MemberService)` |
+| `execution` | Method 실행 Join Point를 매칭. 가장 많이 사용 | `execution(* dev.aftermoon.service..*.*(..))` |
+| `within` | 특정 타입(패키지/클래스) 내 Join Point로 제한 | `within(dev.aftermoon.service.*)` |
+| `this` | Proxy 객체가 특정 타입인 경우 매칭 | `this(dev.aftermoon.service.MemberService)` |
+| `target` | Target Object가 특정 타입인 경우 매칭 | `target(dev.aftermoon.service.MemberService)` |
 | `args` | Method 파라미터 타입이 조건과 일치할 때 매칭 | `args(java.lang.Long)` |
 | `@target` | Target Object의 Class에 특정 Annotation이 붙어있을 때 매칭 | `@target(org.springframework.stereotype.Service)` |
 | `@within` | 특정 Annotation이 붙은 타입 내 Join Point로 제한 | `@within(org.springframework.stereotype.Service)` |
-| `@annotation` | 실행되는 Method 자체에 특정 Annotation이 붙어있을 때 매칭 | `@annotation(me.aftermoon.aspect.LogExecutionTime)` |
-| `@args` | 전달된 파라미터의 실제 타입에 특정 Annotation이 붙어있을 때 매칭 | `@args(me.aftermoon.dto.Validated)` |
+| `@annotation` | 실행되는 Method 자체에 특정 Annotation이 붙어있을 때 매칭 | `@annotation(dev.aftermoon.aspect.LogExecutionTime)` |
+| `@args` | 전달된 파라미터의 실제 타입에 특정 Annotation이 붙어있을 때 매칭 | `@args(dev.aftermoon.dto.Validated)` |
 | `bean` | Spring Bean 이름(또는 패턴)으로 매칭 | `bean(*Service)` |
 
 각각 예시로 좀 더 풀어보면 아래와 같다.
 
 ```java
 // execution: service 패키지 하위, 이름이 find로 시작하는 모든 Method
-@Pointcut("execution(* me.aftermoon.service..*.find*(..))")
+@Pointcut("execution(* dev.aftermoon.service..*.find*(..))")
 public void findMethods() {}
 
 // within: repository 패키지 전체
-@Pointcut("within(me.aftermoon.repository..*)")
+@Pointcut("within(dev.aftermoon.repository..*)")
 public void repositoryLayer() {}
 
 // args: 파라미터로 Long 하나만 받는 Method
@@ -321,7 +321,7 @@ public void serviceBeans() {}
 여러 `Pointcut`을 `&&`, `||`, `!` 로 조합하는 것도 가능하다.
 
 ```java
-@Pointcut("execution(* me.aftermoon.service..*.*(..)) && args(java.lang.Long)")
+@Pointcut("execution(* dev.aftermoon.service..*.*(..)) && args(java.lang.Long)")
 public void serviceMethodsWithLongArg() {}
 ```
 
@@ -346,7 +346,7 @@ public void serviceMethodsWithLongArg() {}
 이를 `Self-Invocation`이라고 부르는데, Spring AOP는 Proxy 기반으로 동작하기 때문에 외부에서 Proxy 객체를 거쳐 Method를 호출해야만 `Advice`가 적용된다. 대표적으로 `@Transactional`도 내부적으로 AOP(Proxy)로 구현되어 있어서 이 문제를 그대로 겪는다.
 
 ```java
-package me.aftermoon.service;
+package dev.aftermoon.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -376,7 +376,7 @@ Proxy 객체를 거쳐야 Advice가 끼어들 수 있는데, 같은 클래스 �
 2. **자기 자신을 주입받아 호출**: `ApplicationContext` 혹은 자기 자신 Bean을 주입받아, `this.inner()`가 아니라 `주입받은 Proxy.inner()`로 호출한다. 다만 이 방법은 너무 많이 사용하면 코드가 복잡해질 수 있어서 개인적으로는 선호하지 않는다.
 
 ```java
-package me.aftermoon.service;
+package dev.aftermoon.service;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
