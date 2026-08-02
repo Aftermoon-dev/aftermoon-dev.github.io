@@ -1,7 +1,7 @@
 ---
 title: "[Ubuntu, MariaDB] /tmp/mysql.sock 에러 해결"
 date: 2021-07-19 17:04:00 +0900
-categories: Ubuntu MariaDB
+categories: [Ubuntu, MariaDB]
 ---
 
 최근 개발 중에 MariaDB 서버를 이용할 일이 있어 사용중인데, 연결시에 ERROR 2002 문제가 발생했다. 

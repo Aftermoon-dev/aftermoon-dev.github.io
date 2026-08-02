@@ -1,7 +1,7 @@
 ---
 title: "Spring AOP (Aspect Oriented Programming)"
 date: 2026-08-01 15:00:00 +0900
-categories: AOP SpringFramework SpringBoot
+categories: [Spring Boot, AOP, Spring AOP]
 ---
 
 # AOP란?

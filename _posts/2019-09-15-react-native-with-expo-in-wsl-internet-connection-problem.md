@@ -1,7 +1,7 @@
 ---
 title: "[React Native] WSL에서 Expo를 통한 React Native시 인터넷 접속이 끊기는 문제"
 date: 2019-09-15 01:39:00 +0900
-categories: ReactNative
+categories: [React Native]
 ---
 
 WSL (Windows Subsystem For Linux) 에서 Expo를 통해 React Native를 개발하다가, 인터넷 연결은 제대로 되어있는데 사용이 불가능한 경우가 생긴다.

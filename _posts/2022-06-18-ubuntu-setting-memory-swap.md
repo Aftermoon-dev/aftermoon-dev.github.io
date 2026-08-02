@@ -1,7 +1,7 @@
 ---
 title: "[Ubuntu] 메모리 Swap 설정하기"
 date: 2022-06-18 09:00:00 +0900
-categories: Ubuntu
+categories: [Linux, Ubuntu]
 ---
 
 > 이 글은 [UMC (University MakeUs Challenge)](https://umc.makeus.in) 활동 중 부원들과 개발 지식을 나누기 위해 작성했던 글을  일부 수정하여 블로그로 옮겨온 글입니다. 
