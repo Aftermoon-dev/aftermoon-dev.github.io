@@ -18,10 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Minjae Seon (Eric)
+title: Minjae Seon (Eric)'s Tech Blog
 email: ddol0225@gmail.com
 locale: "ko-KR"
-description: Eric's Tech Blog
+description: Software Engineer Minjae Seon (Eric)'s Tech Blog
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: aftermoon.dev
 author: Minjae Seon (Eric)
