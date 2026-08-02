@@ -10,10 +10,9 @@ permalink: /about/
 학창시절에는 VB.NET을 이용한 간단한 프로그램 개발부터 시작하여 마인크래프트와 같은 자체 데디케이티드 서버를 지원하는 게임 서버 운영을 위한 네트워크 환경 구축 및 Linux 서버 관리/운영, Android 앱 개발 등 소프트웨어 분야에서 다양한 경험을 해왔습니다.
 
 ## 스킬
-- Java · TypeScript · JavaScript · Python · Kotlin · HTML · CSS
-- Spring Boot · React · Node.js (Express)
+- Java · TypeScript · JavaScript · Dart · Python · Kotlin · HTML · CSS
+- Spring Boot · React · Flutter ·  Express · Android · Nest.js
 - AWS
-- Claude
 
 ## 경력
 
