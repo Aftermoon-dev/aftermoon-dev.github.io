@@ -16,8 +16,14 @@ layout: default
         </ul>
         {%- endif -%}
     </div>
+    {%- if page.toc -%}
+    <details class="post-toc" open>
+        <summary>목차</summary>
+        {{ content | toc_only }}
+    </details>
+    {%- endif -%}
     <div class="post">
-        {{ content }}
+        {{ content | inject_anchors }}
     </div>
     <div class="post-warning">
         해당 블로그에서 제공하는 내용이 항상 맞는 해결책이 아닐 수 있으며, 

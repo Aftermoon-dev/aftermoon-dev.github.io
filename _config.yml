@@ -35,6 +35,16 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      toc: true
+
+toc:
+  min_level: 1
+  max_level: 6
+  ordered_list: false
+  list_id: toc
+  list_class: toc-list
+  sublist_class: toc-sublist
+  item_class: toc-item
 
 # Build settings
 # theme: plainwhite
@@ -43,6 +53,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-remote-theme
+  - jekyll-toc
 
 plainwhite:
   name: Minjae Seon (선민재)
@@ -87,5 +98,8 @@ giscus:
 #   - node_modules/
 #   - vendor/bundle/
 #   - vendor/cache/
+
+exclude:
+  - .vscode/
 #   - vendor/gems/
 #   - vendor/ruby/
