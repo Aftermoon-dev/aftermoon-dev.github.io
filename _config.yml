@@ -21,12 +21,12 @@
 title: Minjae Seon (Eric)
 email: ddol0225@gmail.com
 locale: "ko-KR"
-description: Hello!
+description: Eric's Tech Blog
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: aftermoon.dev
 author: Minjae Seon (Eric)
 url: https://aftermoon.dev
-
+permalink: /:year/:month/:day/:title.html
 github_username: Aftermoon-dev
 
 defaults:
